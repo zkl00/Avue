@@ -9,6 +9,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 Vue.config.productionTip = false
+import VueParticles from 'vue-particles'//导入动画效果登录
+Vue.use(VueParticles)
 new Vue({
   router,
   store,

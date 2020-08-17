@@ -1,5 +1,6 @@
 <template>
   <div class="login_box">
+     <particles></particles>
     <!-- animate__fadeInDownBig  bounceInDown-->
     <div class="box_NI">
       <avue-queue enter="bounceInDown">
@@ -9,12 +10,17 @@
         </div>
       </avue-queue>
     </div>
+   
   </div>
 </template>
 
 <script>
 import { LoginData } from '@/network/index'
+import particles from './components/particles'
 export default {
+  components:{
+    particles
+  },
   data() {
     return {
       option: {
@@ -63,6 +69,8 @@ export default {
   background: #444;
   text-align: center;
   .box_NI {
+    position: absolute;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: center;

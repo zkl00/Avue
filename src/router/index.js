@@ -4,6 +4,10 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const Longin = () => import('../views/login/login.vue')
+const Index = ()=>import('../views/index/index.vue')
+const Home  = ()=>import('../views/home/home.vue')
+const Users  = ()=>import('../views/users/users.vue')//用户列表
+const Roles = ()=>import('../views/roles/roles.vue')//角色列表
 const routes = [
   {
     path: '/',
@@ -13,6 +17,30 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Longin
+  },
+  {
+    path:'/index',
+    name:'index',
+    component:Index,
+    redirect:'/home',
+    children:[
+      {
+        path:'/home',
+        name:'home',
+        component:Home
+      },
+      {
+        path:'/users',
+        name:'users',
+        component:Users,
+      },
+      {
+        path:'/roles',
+        name:'roles',
+        component:Roles
+      }
+
+    ]
   }
 ]
 

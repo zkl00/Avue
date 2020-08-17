@@ -2,7 +2,6 @@ import axios from 'axios'
 // import { resolve, reject } from 'core-js/fn/promise'
 
 export default function request(confing){
-    console.log(confing)
     return new Promise((resolve,reject)=>{
 
         // 封装请求地址
@@ -12,6 +11,8 @@ export default function request(confing){
         })
         // 请求拦截
         install.interceptors.request.use((confing)=>{
+      
+            confing.headers.Authorization = sessionStorage.getItem('token')
            return  confing
         })
 
